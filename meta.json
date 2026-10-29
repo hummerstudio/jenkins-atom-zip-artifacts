@@ -1,0 +1,11 @@
+{
+  "name": "Zip / unzip",
+  "summary": "Packs files into a zip in the workspace, or unpacks an archive with zip-slip protection.",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": [
+    "official-port",
+    "zip-artifacts"
+  ],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-zip-artifacts"
+}

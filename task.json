@@ -1,0 +1,74 @@
+{
+  "atomCode": "zip-artifacts",
+  "name": "Zip / unzip",
+  "version": "1.0.0",
+  "description": "Packs files into a zip in the workspace, or unpacks an archive with zip-slip protection.",
+  "execution": {
+    "packagePath": "zip-artifacts.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp zip-artifacts.jar com.jenkinschina.atom.sdk.AtomRunner"
+  },
+  "input": {
+    "operation": {
+      "label": "操作",
+      "type": "selector",
+      "default": "zip",
+      "options": [
+        "zip",
+        "unzip"
+      ]
+    },
+    "archive": {
+      "label": "归档文件路径（workspace 相对）",
+      "type": "vuex-input",
+      "default": "artifacts.zip"
+    },
+    "includes": {
+      "label": "打包哪些文件（glob）",
+      "type": "vuex-input",
+      "default": "**/*"
+    },
+    "excludes": {
+      "label": "排除（glob）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "target": {
+      "label": "解压到哪个目录",
+      "type": "vuex-input",
+      "default": "unpacked"
+    }
+  },
+  "output": {
+    "archive": {
+      "type": "string",
+      "description": "归档路径"
+    },
+    "files": {
+      "type": "string",
+      "description": "打包的文件数"
+    },
+    "bytes": {
+      "type": "string",
+      "description": "字节数"
+    },
+    "human": {
+      "type": "string",
+      "description": "人类可读大小"
+    },
+    "entries": {
+      "type": "string",
+      "description": "解压的条目数"
+    },
+    "target": {
+      "type": "string",
+      "description": "解压目录"
+    }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": {
+      "runner": ">=0.4.0"
+    }
+  }
+}
