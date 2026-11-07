@@ -37,4 +37,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: zip-artifacts-atom
-          path: atom/dist/zip-artifacts/
+          path: atom/target/dist/zip-artifacts/
